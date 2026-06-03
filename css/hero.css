@@ -1,0 +1,269 @@
+/* ===========================================
+   HERO SLIDER — Yeah1 Style
+   Ảnh lớn cố định + swiper strip bên dưới
+=========================================== */
+
+/* ── SECTION WRAPPER ── */
+.hero-slider {
+  width: 100%;
+  padding: 16px 0 0;
+  background: var(--color-bg-page);
+}
+
+/* ══════════════════════════════════════
+   ẢNH LỚN CHÍNH
+══════════════════════════════════════ */
+.hero-featured {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 620px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #111;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hero-featured__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.hero-featured:hover .hero-featured__img {
+  transform: scale(1.03);
+}
+
+/* Gradient từ dưới lên — đúng Yeah1 */
+.hero-featured__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 25%,
+    rgba(0,0,0,0.08) 50%,
+    rgba(0,0,0,0.70) 78%,
+    rgba(0,0,0,0.90) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0 72px 140px;
+  gap: 12px;
+}
+
+/* Badge — outline trắng như Yeah1 */
+.hero-featured__badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: var(--fw-700);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.80);
+  background: rgba(0,0,0,0.12);
+  backdrop-filter: blur(4px);
+  padding: 3px 14px;
+  border-radius: var(--radius-full);
+  width: fit-content;
+}
+
+/* Tiêu đề */
+.hero-featured__title {
+  font-size: 26px;
+  font-weight: var(--fw-800);
+  color: #fff;
+  line-height: 1.35;
+  max-width: 700px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Mô tả */
+.hero-featured__desc {
+  font-size: var(--fs-14);
+  color: rgba(255,255,255,0.78);
+  line-height: 1.65;
+  max-width: 580px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ══════════════════════════════════════
+   SWIPER STRIP — hàng thumbnail bên dưới
+══════════════════════════════════════ */
+.hero-strip {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: -100px;
+  padding-bottom: 8px;
+  posittion: relative;
+  z-index: 10;
+}
+
+/* Nút prev / next */
+.hero-strip__btn {
+  width: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(0,0,0,0.15);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-top: 0;
+  z-index: 10;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: border-color var(--transition), color var(--transition), box-shadow var(--transition);
+}
+.hero-strip__btn svg {
+  width: 20px;
+  height: 20px;
+}
+.hero-strip__btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.14);
+}
+
+.hero-strip__viewport {
+  flex: 1;
+  overflow: hidden;
+  padding: 4px 8px;
+  margin: -4px -8px;
+  box-sizing: content-box;
+}
+
+/* Track: width 100% để card con tính calc() đúng */
+.hero-strip__track {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  transition: transform 0.42s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Mỗi card */
+.hero-strip__card {
+  flex: 0 0 calc((100% - 32px) / 3);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity var(--transition);
+}
+.hero-strip__card:hover { opacity: 0.82; }
+
+/* Ảnh thumbnail */
+.hero-strip__img {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #e0e0e0;
+  flex-shrink: 0;
+}
+.hero-strip__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+.hero-strip__card:hover .hero-strip__img img {
+  transform: scale(1.06);
+}
+
+/* Tag — outline màu primary */
+.hero-strip__tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: var(--fw-700);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--color-accent-purple);
+  border: 1.5px solid var(--color-accent-purple);
+  background: transparent;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  width: fit-content;
+}
+
+/* Tiêu đề */
+.hero-strip__title {
+  font-size: var(--fs-13);
+  font-weight: var(--fw-700);
+  color: var(--color-text);
+  line-height: 1.45;
+  display: block;
+  overflow: visible;
+  background: var(--color-bg-page);  /* thêm dòng này */
+  padding: 6px 0; 
+}
+
+/* Active: outline đỏ trên ảnh + tiêu đề đỏ */
+.hero-strip__card.active .hero-strip__img {
+  outline: 2.5px solid var(--color-primary);
+  outline-offset: 2px;
+}
+.hero-strip__card.active .hero-strip__title {
+  color: var(--color-primary);
+}
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .hero-featured            { height: 420px; }
+  .hero-featured__overlay   { padding: 0 40px 120px; }
+  .hero-featured__title     { font-size: var(--fs-22); }
+  .hero-strip__card{flex: 0 0 calc((100% - 32px) / 3);}
+}
+
+@media (max-width: 768px) {
+  .hero-featured            { height: 320px; border-radius: var(--radius-md); }
+  .hero-featured__overlay   { padding: 0 24px 100px; }
+  .hero-featured__title     { font-size: var(--fs-13); }
+  .hero-featured__desc      { display: none; }
+  .hero-strip__card         { flex: 0 0 calc(50% - 10px); }
+  .hero-strip__img          { height: 105px; }
+}
+
+@media (max-width: 480px) {
+  .hero-slider              { padding: 8px 0 0; }
+  .hero-featured            { height: 300px; }
+  .hero-featured__overlay   { padding: 0 16px 110px; }
+  .hero-featured__title     { font-size: var(--fs-12);}
+  .hero-featured__badge     { font-size: 10px; }
+  .hero-strip               { gap: 8px; }
+  .hero-strip__btn          { width: 32px; min-width: 32px; height: 32px; margin-top: 36px; }
+  .hero-strip__card         { flex: 0 0 calc(50% - 8px); }
+  .hero-strip__img          { height: 88px; }
+  .hero-strip__title        { font-size: 12px; -webkit-line-clamp: 2; }
+}
+
+/* Dark mode */
+[data-theme="dark"] .hero-strip__btn {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.18);
+  color: #eee;
+}
+[data-theme="dark"] .hero-strip__title {
+  color: rgba(255,255,255,0.88);
+}

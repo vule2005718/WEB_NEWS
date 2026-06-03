@@ -1,0 +1,124 @@
+<!--
+  HEADER COMPONENT
+  File này được load động qua JS (main.js → loadComponent)
+  Dùng đường dẫn ../ vì component nằm trong /components/
+-->
+<header class="site-header">
+  <div class="container">
+
+    <!-- GRID: Logo | Center | Right -->
+    <div class="header-inner">
+
+      <!-- ── LOGO ── -->
+      <a href="../index.html" class="header-logo">
+        <!-- Thay src bằng link logo của bạn -->
+        <img src="https://github.com/vule2005718/WEB_NEWS/blob/main/logo.png?raw=true" alt="NewsPro - Tin Tức Giải Trí">
+      </a>
+
+      <!-- ── CENTER: 2 hàng ── -->
+      <div class="header-center">
+
+        <!-- Hàng 1: Hot Search -->
+        <div class="header-row1">
+          <div class="hot-search">
+            <!-- Icon lửa -->
+            <img class="hot-icon" src="https://github.com/vule2005718/WEB_NEWS/blob/main/hot.png?raw=true" alt="">
+            <span class="hot-label">HOT SEARCH</span>
+            <!-- Chỉnh hashtag trending tại đây -->
+            <div class="hot-tags-wrapper">
+              <span class="hot-tags">#Sơn Tùng &nbsp; #BLACKPINK &nbsp; #ATVNCG</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hàng 2: Navigation -->
+        <div class="header-row2">
+          <nav class="navbar" id="mainNavbar">
+            <!-- data-page dùng để JS nhận biết trang hiện tại và thêm class active -->
+            <a href="../index.html" class="nav-item nav-item--home" data-page="home">
+              <img src="https://github.com/vule2005718/WEB_NEWS/blob/main/Home.png?raw=true" alt="">
+              <span>TRANG CHỦ</span>
+            </a>
+            <a href="../pages/entertainment.html" class="nav-item" data-page="entertainment">
+              <img src="https://github.com/vule2005718/WEB_NEWS/blob/main/Play.png?raw=true" alt="">
+              <span>GIẢI TRÍ</span>
+            </a>
+            <a href="../pages/music.html" class="nav-item" data-page="music">
+              <img src="https://github.com/vule2005718/WEB_NEWS/blob/main/Music.png?raw=true" alt="">
+              <span>ÂM NHẠC</span>
+            </a>
+            <a href="../pages/movie.html" class="nav-item" data-page="movie">
+              <img src="https://github.com/vule2005718/WEB_NEWS/blob/main/Movie.png?raw=true" alt="">
+              <span>PHIM ẢNH</span>
+            </a>
+            <a href="../pages/lifestyle.html" class="nav-item" data-page="lifestyle">
+              <img src="https://github.com/vule2005718/WEB_NEWS/blob/main/Lifestyle.png?raw=true" alt="">
+              <span>ĐỜI SỐNG</span>
+            </a>
+            <a href="../pages/fashion.html" class="nav-item" data-page="fashion">
+              <img src="https://github.com/vule2005718/WEB_NEWS/blob/main/Fashion.png?raw=true" alt="">
+              <span>THỜI TRANG</span>
+            </a>
+          </nav>
+        </div>
+
+      </div><!-- /header-center -->
+
+      <!-- ── RIGHT: Search + Theme Toggle ── -->
+      <div class="header-right">
+
+        <!-- Hàng 1: Thanh tìm kiếm -->
+        <div class="header-row1">
+          <form class="search-box" onsubmit="return false;" role="search" autocomplete="off">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm tin tức..." aria-label="Tìm kiếm" class="search-input" autocomplete="off">
+            <button type="submit" aria-label="Tìm kiếm">
+              <img src="https://github.com/vule2005718/WEB_NEWS/blob/main/Search.png?raw=true" alt="Search">
+            </button>
+          </form>
+        </div>
+
+        <!-- Hàng 2: Nút đổi theme sáng/tối -->
+        <div class="header-row2 header-row2--right">
+          <div class="theme-toggle" id="themeToggle">
+            <!-- Nút dark mode -->
+            <button class="theme-btn" id="btnDark" title="Chế độ tối" aria-label="Bật chế độ tối">
+              <img src="https://github.com/vule2005718/WEB_NEWS/blob/main/Moon.png?raw=true" alt="Dark">
+            </button>
+            <span class="theme-divider"></span>
+            <!-- Nút light mode -->
+            <button class="theme-btn theme-btn--avatar" id="btnLight" title="Chế độ sáng" aria-label="Bật chế độ sáng">
+              <img src="https://github.com/vule2005718/WEB_NEWS/blob/main/Sun.png?raw=true" alt="Light">
+            </button>
+          </div>
+        </div>
+
+      </div><!-- /header-right -->
+
+    </div><!-- /header-inner -->
+  </div>
+
+  <!-- ── HAMBURGER (mobile) — hiện khi width ≤ 768px ── -->
+  <!-- Nút này sẽ được JS thêm vào hoặc bạn có thể để cố định ở đây -->
+</header>
+
+<!-- MOBILE NAV OVERLAY — hiện khi nhấn hamburger -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mobile-nav__panel">
+
+    <!-- Nút đóng -->
+    <div class="mobile-nav__close">
+      <button onclick="closeMobileNav()" aria-label="Đóng menu">✕</button>
+    </div>
+
+    <!-- Danh sách menu -->
+    <nav class="mobile-nav__list">
+      <a href="../index.html"               class="mobile-nav__item" data-page="home">Trang Chủ</a>
+      <a href="../pages/entertainment.html" class="mobile-nav__item" data-page="entertainment">Giải Trí</a>
+      <a href="../pages/music.html"         class="mobile-nav__item" data-page="music">Âm Nhạc</a>
+      <a href="../pages/movie.html"          class="mobile-nav__item" data-page="movie">Phim Ảnh</a>
+      <a href="../pages/lifestyle.html"      class="mobile-nav__item" data-page="lifestyle">Đời Sống</a>
+      <a href="../pages/fashion.html"        class="mobile-nav__item" data-page="fashion">Thời Trang</a>
+    </nav>
+
+  </div>
+</div>

@@ -1,0 +1,252 @@
+/* ===========================================
+   CATEGORY PAGE SPECIFIC là các style chỉ dùng cho trang chuyên mục (entertainment, v.v.)
+=========================================== */
+
+/* "Đọc Nhiều" title on right */
+.doc-nhieu-title {
+  font-size: var(--fs-20);
+  font-weight: var(--fw-800);
+  color: var(--color-text);
+  text-align: right;
+  margin-bottom: 12px;
+}
+
+/* Slider article rows container */
+.articles-slider {
+  position: relative;
+}
+
+.articles-slider__track {
+  overflow: hidden;
+}
+
+.articles-slide {
+  display: none;
+}
+
+.articles-slide.active {
+  display: block;
+}
+
+/* News featured rows inside box */
+.news-featured-box {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 28px;
+}
+
+.news-featured-box__inner {
+  padding: 8px;
+}
+
+.nf-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  align-items: start;
+  padding: 16px;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.nf-item:last-child {
+  border-bottom: none;
+}
+
+.nf-img {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #e8e8e8;
+  aspect-ratio: 4/3;
+}
+
+.nf-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.nf-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+}
+.nf-info a{
+  width: 100%;
+  height: auto;
+}
+.nf-ph {
+  border-radius: var(--radius-md);
+  background: #e8e8e8;
+  aspect-ratio: 4/3;
+}
+
+[data-theme="dark"] .nf-ph {
+  background: #2a3550;
+}
+
+@media (max-width: 768px) {
+  .nf-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .nf-act-item {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .nf-info {
+    margin-top: 0;
+  }
+
+  .nf-ph {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nf-act-item {
+    grid-template-columns: 90px 1fr;
+    gap: 8px;
+  }
+
+  .nf-item {
+    padding: 10px;
+  }
+}
+/* ===========================================
+   CATEGORY PAGE — SLIDER, SIDEBAR HOVER, NEWS LIST
+   Thêm mới cho trang chuyên mục (entertainment, v.v.)
+=========================================== */
+
+/* ── category-slider: wrapper slider chuyên mục ── */
+.category-slider {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 28px;
+}
+
+/* Viewport ẩn tràn, slide chuyển qua opacity + transform */
+.category-slider__viewport {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Mỗi slide — mặc định ẩn */
+.category-slide {
+  display: none;
+  padding: 8px;
+}
+
+/* Slide đang active — hiện */
+.category-slide.active {
+  display: block;
+}
+
+/* Dots tự sinh bởi JS */
+.category-slider__dots {
+  padding: 12px 0 16px;
+}
+
+/* ── category-divider: đường kẻ giữa news-card ── */
+.category-divider {
+  height: 1px;
+  background: var(--color-border-light);
+  margin: 0 20px;
+}
+
+/* ── category-news: danh sách tin mới nhất ── */
+.category-news {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 28px;
+}
+
+/* ── category-item: 1 dòng tin (ảnh trái + text phải) ── */
+.category-item {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 16px;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--color-border-light);
+  align-items: start;
+  transition: background var(--transition);
+}
+
+.category-item:last-child {
+  border-bottom: none;
+}
+
+.category-item:hover {
+  background: var(--color-bg-page);
+}
+
+/* Ảnh thumbnail category-item */
+.category-item__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background: #e8e8e8;
+  flex-shrink: 0;
+}
+
+.category-item__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.category-item:hover .category-item__img img {
+  transform: scale(1.05);
+}
+
+.category-item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.category-item__title {
+  font-size: var(--fs-14);
+  font-weight: var(--fw-700);
+  color: var(--color-text);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.category-item__title:hover {
+  color: var(--color-primary);
+}
+
+.category-item__meta {
+  font-size: var(--fs-11);
+  color: var(--color-text-muted);
+}
+
+/* ── news-card__desc — mô tả phụ trong news-card ── */
+.news-card__desc {
+  font-size: var(--fs-13);
+  color: var(--color-text-light);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}

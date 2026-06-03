@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NewsPro - Tin tức giải trí, âm nhạc, phim ảnh, thời trang cập nhật nhanh nhất">
+  <title>NewsPro - Tin Tức Giải Trí</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <!-- CSS chính — import tất cả các file CSS -->
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+  <!-- ========================================
+       HEADER — Load từ file component riêng
+       Sau khi load xong sẽ gọi onHeaderLoaded()
+  ======================================== -->
+  <div id="header"></div>
+
+  <!-- ========================================
+       HERO SLIDER — Yeah1 Style
+       Ảnh lớn cố định + swiper strip bên dưới
+  ======================================== -->
+  <section class="hero-slider">
+    <div class="container">
+
+      <!-- Ảnh lớn chính -->
+      <a href="#" class="hero-featured" id="heroFeatured">
+        <img class="hero-featured__img" id="heroFeaturedImg"
+             src="https://media-cdn-v2.laodong.vn/Storage/NewsPortal/2023/4/26/1184769/1AAD455A-C5C7-41BD-9.jpeg"
+             alt="Sơn Tùng M-TP">
+        <div class="hero-featured__overlay">
+          <span class="featured-card__badge">NỔI BẬT</span>
+          <h2 class="hero-featured__title" id="heroFeaturedTitle">
+            Giải mã bí ẩn "con sâu" và loạt chất liệu dân gian được Sơn Tùng M-TP "cài cắm" trong MV mới
+          </h2>
+          <p class="hero-featured__desc" id="heroFeaturedDesc">
+            Sự trở lại của Sơn Tùng M-TP sau 2 năm im ắng với single tiếng Anh "COME MY WAY" hợp tác cùng rapper đình đám nước Mỹ TYGA không chỉ đơn thuần là một phát súng âm nhạc quốc tế.
+          </p>
+        </div>
+      </a>
+
+      <!-- Swiper strip bên dưới -->
+      <div class="hero-strip">
+
+        <button class="hero-strip__btn hero-strip__btn--prev" id="heroStripPrev" aria-label="Trước">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+        </button>
+
+        <div class="hero-strip__viewport">
+          <div class="hero-strip__track" id="heroStripTrack">
+
+            <a href="#" class="hero-strip__card"
+               data-img="https://asset-cdn.yeah1.com/images/DSC_01298_5e6cb40f3b.jpg"
+               data-badge="ÂM NHẠC"
+               data-title='Thái Lê Minh Hiếu hé lộ "Roi vào tình yêu" sẽ có phiên bản trong Anh Trai Vượt Ngàn Chông Gai'
+               data-desc="Ca khúc đình đám sẽ được dàn dựng lại với phần trình diễn hoàn toàn mới trong chương trình.">
+              <div class="hero-strip__img">
+                <img src="https://asset-cdn.yeah1.com/images/DSC_01298_5e6cb40f3b.jpg" alt="">
+              </div>
+              <span class="hero-strip__tag">ÂM NHẠC</span>
+              <p class="hero-strip__title">Thái Lê Minh Hiếu hé lộ "Roi vào tình yêu" sẽ có phiên bản trong Anh Trai Vượt Ngàn Chông Gai</p>
+            </a>
+
+            <a href="#" class="hero-strip__card"
+               data-img="https://asset-cdn.yeah1.com/images/Poster_5_anh_size_1_1_174ba699de.jpg"
+               data-badge="TV SHOW"
+               data-title="Jun Phạm, Duy Khánh, BB Trần, Neko Lê và Thanh Duy tái xuất tại Anh Trai Vượt Ngàn Chông Gai 2026"
+               data-desc="Dàn anh tài quen thuộc chính thức trở lại với mùa 2 của show thực tế đình đám nhất Việt Nam.">
+              <div class="hero-strip__img">
+                <img src="https://asset-cdn.yeah1.com/images/Poster_5_anh_size_1_1_174ba699de.jpg" alt="">
+              </div>
+              <span class="hero-strip__tag">TV SHOW</span>
+              <p class="hero-strip__title">Jun Phạm, Duy Khánh, BB Trần, Neko Lê và Thanh Duy tái xuất tại Anh Trai Vượt Ngàn Chông Gai 2026</p>
+            </a>
+
+
+            <a href="#" class="hero-strip__card"
+               data-img="https://asset-cdn.yeah1.com/images/bia_149abe483d.jpg"
+               data-badge="ÂM NHẠC"
+               data-title="5 anh tài đầu tiên đồng loạt chiếm top thảo luận gameshow"
+               data-desc="Ngay sau khi lộ diện, 5 anh tài đầu tiên của Anh Trai Vượt Ngàn Chông Gai 2026 đã tạo cơn sốt trên mạng xã hội.">
+              <div class="hero-strip__img">
+                <img src="https://asset-cdn.yeah1.com/images/bia_149abe483d.jpg" alt="">
+              </div>
+              <span class="hero-strip__tag">ÂM NHẠC</span>
+              <p class="hero-strip__title">5 anh tài đầu tiên đồng loạt chiếm top thảo luận gameshow</p>
+            </a>
+
+            <a href="#" class="hero-strip__card"
+               data-img="https://asset-cdn.yeah1.com/images/bia_149abe483d.jpg"
+               data-badge="ÂM NHẠC"
+               data-title="Lộ diện dàn cast “Quán Nhà Haha”: 5 thành viên tái xuất, Jun Phạm và Duy Khánh lo lắng vì từ “Nhà” ra “Quán”"
+               data-desc="Ngay sau khi lộ diện, 5 anh tài đầu tiên của Anh Trai Vượt Ngàn Chông Gai 2026 đã tạo cơn sốt trên mạng xã hội.">
+              <div class="hero-strip__img">
+                <img src="https://asset-cdn.yeah1.com/images/POSTER_ALL_5_2b33972365.png" alt="">
+              </div>
+              <span class="hero-strip__tag">TV SHOW</span>
+              <p class="hero-strip__title">Lộ diện dàn cast “Quán Nhà Haha”: 5 thành viên tái xuất, Jun Phạm và Duy Khánh lo lắng vì từ “Nhà” ra “Quán”</p>
+            </a>
+
+          </div><!-- /track -->
+        </div><!-- /viewport -->
+
+        <button class="hero-strip__btn hero-strip__btn--next" id="heroStripNext" aria-label="Tiếp">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+
+      </div><!-- /hero-strip -->
+
+    </div><!-- /container -->
+  </section>
+
+
+  <!-- ========================================
+       MAIN CONTENT AREA
+  ======================================== -->
+  <div class="container">
+    <div style="height:32px;"></div>
+
+
+    <!-- ========================================
+         SECTION: GIẢI TRÍ
+         Layout: 1 card lớn trái + 2×2 grid phải
+    ======================================== -->
+    <section class="home-section">
+
+      <!-- Header section: tên + tabs + xem tất cả -->
+      <div class="home-section__header">
+        <h2 class="home-section__name">Giải Trí</h2>
+        <div class="home-tab active">TV Show</div>
+        <div class="home-tab">Sự Kiện</div>
+        <a href="./pages/entertainment.html" class="section-view-all">Xem tất cả &raquo;</a>
+      </div>
+
+      <div style="height:16px;"></div>
+
+      <!-- Grid: [featured-card trái] [2×2 phải] -->
+      <div class="giaitri-grid">
+
+        <!-- Card lớn bên trái -->
+        <!--
+          ĐỔI ẢNH FEATURED CARD:
+          Thay src="" bên trong .featured-card__img > img
+          Kích thước khuyến nghị: 260×350px (tỉ lệ 3:4)
+        -->
+        <a href="./pages/article.html" class="featured-card">
+          <div class="featured-card__img">
+            <img
+              src="https://images2.thanhnien.vn/528068263637045248/2023/4/14/edit-lan-ngoc--1681439195640898341745.png"
+              alt="Ninh Dương Lan Ngọc">
+          </div>
+          <div class="featured-card__body">
+            <span class="featured-card__badge">HOT</span>
+            <div class="featured-card__title">
+              Ninh Dương Lan Ngọc: "Tôi không ngại thay đổi để trưởng thành hơn" - Nữ diễn viên
+              chia sẻ về hành trình 10 năm làm nghề thuật và những dự định tương lai.
+            </div>
+            <div class="featured-card__meta">6 giờ trước • 12.3K lượt xem</div>
+          </div>
+        </a>
+
+        <!-- Grid 2×2 bên phải -->
+        <!--
+          ĐỔI ẢNH MINI CARD:
+          Thay src="" trong .mini-card__img > img
+          Kích thước khuyến nghị: 280×175px (tỉ lệ 16:10)
+        -->
+        <div class="giaitri-right-grid">
+
+          <a href="./pages/article.html" class="mini-card">
+            <div class="mini-card__img">
+              <img src="https://vcdn1-giaitri.vnecdn.net/2025/02/03/tran-thanh-bo-tu-1-1738572656-9426-1738572968.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=tOoK_j08cZggsLz8wf2hQg" alt="Trần Thành">
+            </div>
+            <div class="mini-card__body">
+              <div class="mini-card__title">Trần Thành hé lộ dự án phim mới - quy tụ dàn cast "khủng"</div>
+              <div class="mini-card__meta">5 giờ trước • 8.6K lượt xem</div>
+            </div>
+          </a>
+
+          <a href="./pages/article.html" class="mini-card">
+            <div class="mini-card__img">
+              <img src="https://media-cdn-v2.laodong.vn/storage/newsportal/2020/6/4/810304/LINH7448.jpg?w=800&crop=auto&scale=both" alt="Lý Nhã Kỳ">
+            </div>
+            <div class="mini-card__body">
+              <div class="mini-card__title">Lý Nhã Kỳ khoe nhan sắc trẻ trung ở tuổi 41 khiến fan trầm trồ</div>
+              <div class="mini-card__meta">9 giờ trước • 6.3K lượt xem</div>
+            </div>
+          </a>
+
+          <a href="./pages/article.html" class="mini-card">
+            <div class="mini-card__img">
+              <img src="https://cdn.24h.com.vn/upload/2-2026/images/2026-04-30/hieuthuhai-2-1777539695-750-width1366height1366.jpg" alt="HIEUTHUHAI">
+            </div>
+            <div class="mini-card__body">
+              <div class="mini-card__title">HIEUTHUHAI lọt top nghệ sĩ trẻ được yêu thích nhất châu Á</div>
+              <div class="mini-card__meta">7 giờ trước • 10.1K lượt xem</div>
+            </div>
+          </a>
+
+          <a href="./pages/article.html" class="mini-card">
+            <div class="mini-card__img">
+              <img src="https://kenh14cdn.com/zoom/594_371/203336854389633024/2025/11/17/ava-tbtr-800-42-17633625822881888351608.png" alt="Tóc Tiên">
+            </div>
+            <div class="mini-card__body">
+              <div class="mini-card__title">Tóc Tiên và Touliver xác nhận tham gia show thực tế mới</div>
+              <div class="mini-card__meta">11 giờ trước • 7.2K lượt xem</div>
+            </div>
+          </a>
+
+        </div><!-- /giaitri-right-grid -->
+      </div><!-- /giaitri-grid -->
+
+    </section><!-- /Giải Trí section -->
+
+
+    <!-- ========================================
+         KHÁM PHÁ THEO CHỦ ĐỀ — Icon navigation
+    ======================================== -->
+    <section class="cat-explore home-section" aria-label="Khám phá theo chủ đề">
+      <p class="cat-explore__label-title">Khám phá theo từng chủ đề</p>
+      <div class="cat-explore__grid">
+        <a href="./pages/entertainment.html" class="cat-explore__item">
+          <div class="cat-explore__icon"><img src="https://github.com/vule2005718/WEB_NEWS/blob/main/Play.png?raw=true" alt="Giải trí"></div>
+          <span class="cat-explore__label">Giải trí</span>
+        </a>
+        <a href="./pages/music.html" class="cat-explore__item">
+          <div class="cat-explore__icon"><img src="https://github.com/vule2005718/WEB_NEWS/blob/main/Music.png?raw=true" alt="Âm nhạc"></div>
+          <span class="cat-explore__label">Âm nhạc</span>
+        </a>
+        <a href="./pages/movie.html" class="cat-explore__item">
+          <div class="cat-explore__icon"><img src="https://github.com/vule2005718/WEB_NEWS/blob/main/Movie.png?raw=true" alt="Phim ảnh"></div>
+          <span class="cat-explore__label">Phim ảnh</span>
+        </a>
+        <a href="./pages/lifestyle.html" class="cat-explore__item">
+          <div class="cat-explore__icon"><img src="https://github.com/vule2005718/WEB_NEWS/blob/main/Lifestyle.png?raw=true" alt="Đời sống"></div>
+          <span class="cat-explore__label">Đời sống</span>
+        </a>
+        <a href="./pages/fashion.html" class="cat-explore__item">
+          <div class="cat-explore__icon"><img src="https://github.com/vule2005718/WEB_NEWS/blob/main/Fashion.png?raw=true" alt="Thời trang"></div>
+          <span class="cat-explore__label">Thời trang</span>
+        </a>
+      </div>
+    </section>
+
+
+    <!-- ========================================
+         PHIM ẢNH + ĐỜI SỐNG — Grid 2 cột
+         ĐỔI ẢNH: Thay src="" trong mini-card__img
+         Kích thước: 280×175px (16:10)
+    ======================================== -->
+    <div class="homepage-cats">
+
+      <!-- Phim Ảnh -->
+      <div class="homepage-cat-box">
+        <h3 class="homepage-cat-box__header gradient--text">Phim Ảnh</h3>
+        <div class="homepage-cat-box__grid">
+          <a href="./pages/movie.html" class="mini-card">
+            <div class="mini-card__img">
+              <img src="https://vcdn1-giaitri.vnecdn.net/2026/05/10/sddefault-1778397899-4240-1778398214.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=JLT9wfM3NlZx2JZuO6wiew" alt="Bông ma hạnh phúc">
+            </div>
+            <div class="mini-card__body">
+              <div class="mini-card__title">Kết phim 'Bóng ma hạnh phúc' gây bàn luận</div>
+            </div>
+          </a>
+          <a href="./pages/movie.html" class="mini-card">
+            <div class="mini-card__img">
+              <img src="https://vcdn1-giaitri.vnecdn.net/2026/05/07/685173467-n-1778124478-4331-1778125624.jpg?w=680&h=0&q=100&dpr=2&fit=crop&s=zeFGe2ePazQieOmqN7ggbg" alt="James Cameron">
+            </div>
+            <div class="mini-card__body">
+              <div class="mini-card__title">James Cameron bị kiện vì 'dùng hình ảnh trái phép'</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Đời Sống -->
+      <div class="homepage-cat-box">
+        <h3 class="homepage-cat-box__header gradient--text">Đời Sống</h3>
+        <div class="homepage-cat-box__grid">
+          <a href="./pages/lifestyle.html" class="mini-card">
+            <div class="mini-card__img">
+              <img src="https://vcdn1-giadinh.vnecdn.net/2026/05/13/a-nh-1778631243-9478-1778631290.jpg?w=500&h=300&q=100&dpr=1&fit=crop&s=djQLettV6cqRwqga8wKNCg" alt="Bánh mì">
+            </div>
+            <div class="mini-card__body">
+              <div class="mini-card__title">'Stand bánh mì' tạo con sốt bánh mì via hè Việt Nam</div>
+            </div>
+          </a>
+          <a href="./pages/lifestyle.html" class="mini-card">
+            <div class="mini-card__img">
+              <img src="https://vcdn1-dulich.vnecdn.net/2018/08/03/1-1533284274.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=Qu5wckFxthjmQ2eRNXScOQ" alt="Làng ẩm ướt">
+            </div>
+            <div class="mini-card__body">
+              <div class="mini-card__title">Cuộc sống tại ngôi làng ẩm ướt nhất thế giới</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /Phim Ảnh + Đời Sống -->
+
+
+    <!-- ========================================
+         THỜI TRANG + THỂ THAO — Grid 2 cột
+    ======================================== -->
+    <div class="homepage-cats">
+
+      <!-- Thời Trang -->
+      <div class="homepage-cat-box">
+        <h3 class="homepage-cat-box__header gradient--text">Thời Trang</h3>
+        <div class="homepage-cat-box__grid">
+          <a href="./pages/fashion.html" class="mini-card">
+            <div class="mini-card__img">
+              <img src="https://vcdn1-giaitri.vnecdn.net/2026/05/09/NTKDOLONG-1778227449-8571-1778317132.jpg?w=500&h=300&q=100&dpr=1&fit=crop&s=iTT9DDqsYALIhU3P2yKG9w" alt="Thời trang quốc tế">
+            </div>
+            <div class="mini-card__body">
+              <div class="mini-card__title">Đỗ Long: 'Làm với sao quốc tế, tài năng thôi chưa đủ'</div>
+            </div>
+          </a>
+          <a href="./pages/fashion.html" class="mini-card">
+            <div class="mini-card__img">
+              <img src="https://vcdn1-giaitri.vnecdn.net/2026/05/13/cung-loi-cannes-2026-JPG-1778627318.jpg?w=500&h=300&q=100&dpr=1&fit=crop&s=Gf1JsEs_9T9cX89Rsp5U1g" alt="Cannes 2026">
+            </div>
+            <div class="mini-card__body">
+              <div class="mini-card__title">Củng Lợi khoe sắc bên dàn sao mở màn LHP Cannes 2026</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Giải Trí -->
+      <div class="homepage-cat-box">
+        <h3 class="homepage-cat-box__header gradient--text">Giải Trí</h3>
+        <div class="homepage-cat-box__grid">
+          <a href="./pages/entertainment.html" class="mini-card">
+            <div class="mini-card__img">
+              <img src="https://vcdn1-thethao.vnecdn.net/2026/05/13/ronaldo-jpeg-1778617135-7151-1778617158.jpg?w=500&h=300&q=100&dpr=2&fit=crop&s=Trw-vBNi1i1bK3qScGbaJQ" alt="Ronaldo">
+            </div>
+            <div class="mini-card__body">
+              <div class="mini-card__title">Ronaldo bị đồng đội cản đường vô địch Saudi Pro League</div>
+            </div>
+          </a>
+          <a href="./pages/entertainment.html" class="mini-card">
+            <div class="mini-card__img">
+              <img src="https://vcdn1-thethao.vnecdn.net/2026/05/13/u17-tha-i-lan-1778613438-1848-1778613771.jpg?w=500&h=300&q=100&dpr=1&fit=crop&s=1tIKi_T6hCM-9si1u6kJQA" alt="U17 châu Á">
+            </div>
+            <div class="mini-card__body">
+              <div class="mini-card__title">Thái Lan, Indonesia bị loại ở vòng bảng U17 châu Á</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /Thời Trang + Thể Thao -->
+
+
+    <!-- ========================================
+         NEWSLETTER + ADS BANNER
+    ======================================== -->
+    <div class="newsletter-section">
+
+      <!-- Bên trái: Form đăng ký email -->
+      <div class="newsletter-section__left">
+        <div class="newsletter-section__form">
+          <input
+            class="newsletter-section__input"
+            type="email"
+            placeholder="Nhập email của bạn"
+            aria-label="Nhập email đăng ký">
+          <button class="newsletter-section__btn" aria-label="Đăng ký">&#8594;</button>
+        </div>
+      </div>
+
+      <!-- Bên phải: Khu vực quảng cáo -->
+      <!--
+        ĐỔI ẢNH QUẢNG CÁO:
+        Thêm thẻ <img> bên trong với src="" là link banner quảng cáo của bạn
+        Hoặc để nguyên placeholder text "ADS"
+      -->
+      <div class="newsletter-section__right">
+        <!--
+          Cách 1: Để text placeholder (hiện tại)
+          <span class="ads-placeholder">ADS</span>
+
+          Cách 2: Thay bằng ảnh quảng cáo
+          <img src="https://link-anh-quang-cao-cua-ban.com/banner.jpg" alt="Quảng cáo">
+        -->
+        <span class="ads-placeholder">ADS</span>
+      </div>
+
+    </div><!-- /newsletter-section -->
+
+  </div><!-- /container -->
+
+
+  <!-- ========================================
+       FOOTER — Load từ file component riêng
+  ======================================== -->
+  <div id="footer"></div>
+
+
+  <!-- ========================================
+       SCRIPTS
+       Thứ tự quan trọng: main.js trước, gọi loadComponent sau
+  ======================================== -->
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="./js/main.js"></script>
+  <script>
+    /*
+      Load header và footer từ file component
+      - onHeaderLoaded: gọi sau khi header HTML đã được chèn vào DOM
+        (cần thiết vì header được fetch bất đồng bộ)
+    */
+    loadComponent('header', './components/header.html', onHeaderLoaded);
+    loadComponent('footer', './components/footer.html');
+  </script>
+
+</body>
+</html>

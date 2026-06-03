@@ -1,0 +1,562 @@
+/* ===========================================
+   SECTION STYLES — Các khu vực nội dung trang chủ
+=========================================== */
+
+/* ── Section wrapper chung ──────────────── */
+.home-section {
+  margin-bottom: var(--gap-section);
+}
+
+/* ── Header của mỗi section (Giải Trí, Âm Nhạc...) ── */
+.home-section__header {
+  display: flex;/* Căn giữa theo chiều ngang */
+  align-items: center;/* Căn giữa theo chiều dọc */
+  gap: 0;/* Khoảng cách giữa tên section và tab (nếu có) */
+  border-bottom: 2px solid var(--color-border);/* Đường kẻ dưới header */
+  padding-bottom: 0;/* Khoảng cách giữa header và nội dung section */
+  margin-bottom: 0;/* Khoảng cách giữa header và section tiếp theo */
+}
+
+/* Tên section — ví dụ "Giải Trí" màu đỏ */
+.home-section__name {
+  font-size: var(--fs-18);
+  font-weight: var(--fw-800);
+  color: var(--color-primary);
+  text-transform: uppercase;/* Viết hoa tất cả chữ */
+  padding: 0 20px 10px 0;/* Khoảng cách giữa tên section và tab (nếu có) */
+  white-space: nowrap;/* Không xuống dòng, giữ nguyên trên 1 dòng */
+  border-right: 2px solid var(--color-border);
+  margin-right: 4px;
+}
+
+/* ── Tab lọc (TV Show / Sự Kiện) ────────── */
+.home-tab {
+  padding: 8px 18px 10px;
+  font-size: var(--fs-13);
+  font-weight: var(--fw-600);
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  cursor: pointer;/* Con trỏ tay khi hover */
+  border-bottom: 2px solid transparent;/* Đường kẻ dưới tab, mặc định trong suốt */
+  margin-bottom: -2px;       /* Overlap với border-bottom của header */
+  transition: all var(--transition);
+}
+
+/* Tab active hoặc hover: đổi màu chữ và hiện đường kẻ dưới */
+.home-tab.active,
+.home-tab:hover {
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary);
+}
+
+/* Nút "Xem tất cả >>" */
+.section-view-all {
+  font-size: var(--fs-13);
+  color: var(--color-text-light);
+  font-weight: var(--fw-600);
+  text-decoration: none;  /* Bỏ gạch chân */
+  margin-left: auto;    /* Đẩy về bên phải */
+  white-space: nowrap;/* Không xuống dòng */
+  padding-bottom: 10px;
+}
+
+/* Hover đổi màu chữ */
+.section-view-all:hover { color: var(--color-primary); }
+
+/* ── Layout Giải Trí: 1 lớn trái + 2×2 phải ── */
+.giaitri-grid {
+  display: grid;/* Kích hoạt grid layout */
+  grid-template-columns: 1fr 1fr; /* 2 cột bằng nhau */
+  gap: 20px;  /* Khoảng cách giữa cột trái và phải */
+  align-items: start;/* Căn top các item */
+  margin-top: 16px;
+}
+
+/* Grid 2×2 bên phải */
+/* Dùng grid con để chia 4 item thành 2 hàng */
+.giaitri-right-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 14px;
+  align-content: stretch;/* Kéo dài các item để fill hết chiều cao cột phải */
+  align-self: start;         /* fill chiều cao cột trái */
+  min-height: 0;
+}
+
+/* ── Khám Phá Theo Chủ Đề ────────────────── */
+/* Wrapper chung của phần khám phá theo chủ đề */
+.cat-explore {
+  margin: 16px 0 32px;
+}
+
+/* Header của phần khám phá theo chủ đề */
+.cat-explore__label-title {
+  font-size: 16px;
+  font-weight: var( --fw-800);
+  color: var(--color-text-light);
+  margin-bottom: 12px;
+}
+
+/* Grid chứa các item khám phá theo chủ đề */
+.cat-explore__grid {
+  display: flex;/* flex là một dang layout 1 chiều, phù hợp với số item không cố định */
+  justify-content: space-around;
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 8px 0;
+}
+
+/* Mỗi icon + nhãn */
+.cat-explore__item {
+  display: flex;
+  flex-direction: column;/* Ảnh trên, text dưới */
+  align-items: center;/* Căn giữa theo chiều ngang */
+  gap: 6px;
+  padding: 14px 32px;
+  cursor: pointer;
+  transition: transform var(--transition);
+  text-decoration: none;
+  color: var(--color-text);
+  flex: 1;
+}
+
+.cat-explore__item:hover {
+  transform: translateY(-3px);   /* Nổi lên khi hover */
+}
+
+/* Khung icon 48×48 */
+.cat-explore__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cat-explore__icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cat-explore__label {
+  font-size: var(--fs-13);
+  font-weight: var(--fw-600);
+  color: var(--color-text-light);
+}
+
+/* ── Grid 2 cột danh mục (Phim Ảnh + Đời Sống) ── */
+.homepage-cats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+/* Box mỗi danh mục — nền trắng, bo góc */
+.homepage-cat-box {
+  background: var(--color-bg-card);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-card);
+}
+
+/* Tiêu đề danh mục (Phim Ảnh, Đời Sống...) */
+.homepage-cat-box__header {
+  font-size: var(--fs-20);
+  font-weight: var(--fw-800);
+  margin-bottom: 16px;
+}
+
+/* Màu riêng theo danh mục */
+.gradient--text { 
+  background: var(--color-text-gradient);
+  background-clip: text; /*cắt backround quanh chữ, giữ lại mỗi chữ để đổ gradient
+                         thay vì đổ cả khung chữ*/
+  -webkit-background-clip: text; /*Phiên bản hỗ trợ cho Chrome / Edge / Safari,
+                                 chuẩn hóa giữa các trình duyệt.*/
+  color: transparent; /*làm mất màu chữ mặc định- chuyển về màu trong suốt
+                      để chữ thể hiện gradient*/
+  -webkit-text-fill-color: transparent;
+}
+
+
+/* Grid 2 ảnh trong mỗi box */
+.homepage-cat-box__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* ── Newsletter + ADS Banner ─────────────── */
+.newsletter-section {
+  border-radius: var(--radius-lg);
+  overflow: hidden;/* Bo góc và ẩn phần thừa của ảnh */
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  margin-bottom: 32px;
+  min-height: 320px;
+  align-items: stretch;/*kéo dài 2 cột bằng nhau về chiều cao, bất kể nội dung bên trong*/
+}
+
+/* Bên trái — khu vực newsletter */
+/* Dùng background image thay vì img tag để dễ căn chỉnh và cover toàn bộ khu vực */
+.newsletter-section__left {
+  background-image: url('https://github.com/vule2005718/WEB_NEWS/blob/main/Newsletter.png?raw=true');
+  background-size: 100% 100%;/* Cover toàn bộ khu vực, có thể cắt xén nếu tỉ lệ ảnh không khớp với khung */
+  background-position: center center;/* Căn giữa ảnh */
+  background-repeat: no-repeat;/* Không lặp lại ảnh */
+  padding: 20px 20px 0 20px;/* Khoảng cách giữa nội dung và viền trên, dưới phải đều 20px còn trái 0 */
+  display: flex;
+  flex-direction: column;/* Sắp xếp nội dung theo cột */
+  justify-content: center;/* Căn giữa theo chiều dọc */
+}
+
+/* Đảm bảo các phần tử trong newsletter nằm trên nền ảnh và không bị ảnh hưởng bởi background */
+.newsletter-section__tag,
+.newsletter-section__title,
+.newsletter-section__form {
+  position: relative;/* position relative định vị một phần tử tương đối so với vị trí ban đầu của nó.
+  Nó cho phép dịch chuyển phần tử bằng các thuộc tính như top, left, right, bottom mà không vỡ bố cục.*/
+  z-index: 1;/* cho phép phần tử này nằm trên các phần tử khác có z-index thấp hơn*/
+}
+
+
+/* Tag nhỏ "Đăng ký nhận tin" */
+.newsletter-section__tag {
+  font-size: var(--fs-13);
+  font-weight: var(--fw-700);
+  color: #fff;
+  opacity: 0.9;/* Làm mờ nhẹ để không quá chói trên nền ảnh */
+  text-transform: uppercase;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;/
+}
+
+.newsletter-section__title {
+  font-size: var(--fs-22);
+  font-weight: var(--fw-800);
+  color: white;
+  line-height: 1.3;/* Tăng khoảng cách giữa các dòng nếu có */
+  margin-bottom: 18px;
+}
+
+/* Form nhập email */
+.newsletter-section__form {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  max-width: 340px;
+}
+
+/* Input email */
+.newsletter-section__input {
+  flex: 1;
+  height: 25px;
+  border: none;
+  border-radius: var(--radius-full);
+  padding: 0 18px;
+  font-size: var(--fs-12);
+  outline: none;/* Bỏ viền xanh mặc định khi focus */
+  background: white;
+  color: #111;
+  font-family: var(--font-primary);
+}
+
+/* Nút submit */
+.newsletter-section__btn {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: none;
+  background: #cc2222;
+  color: white;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;/* Canh giữa dấu "->" trong nút */
+  cursor: pointer;
+  flex-shrink: 0;/* Không cho nút co lại khi container nhỏ hơn */ 
+  transition: background var(--transition);/* Hiệu ứng chuyển màu khi hover */
+}
+
+/* Hover đổi màu nền nút */
+.newsletter-section__btn:hover { background: #aa1111; }
+
+/* Bên phải — khu vực ADS */
+.newsletter-section__right {
+  background: var(--color-ads-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;/* Cho phép đặt placeholder text ở giữa nếu không có ảnh */
+  overflow: hidden;
+}
+
+/* Ảnh ADS — dùng link ảnh thay vì file cục bộ */
+.newsletter-section__right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Placeholder text khi chưa có ảnh ADS */
+.newsletter-section__right .ads-placeholder {
+  font-size: var(--fs-32);
+  font-weight: var(--fw-800);
+  color: white;
+  letter-spacing: 2px;
+}
+
+/* ── Article page layout ─────────────────── */
+/* Wrapper chung của trang bài viết */
+.article-page   { padding: 24px 0 48px; }
+.article-title  { font-size: var(--fs-28); font-weight: var(--fw-800); line-height: 1.35; color: var(--color-text); margin-bottom: 12px; }
+.article-meta   { font-size: var(--fs-13); color: var(--color-text-muted); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+.article-content { font-size: var(--fs-16); line-height: 1.8; color: var(--color-text); }
+.article-content p { margin-bottom: 18px; }
+.article-content img { width: 100%; border-radius: var(--radius-md); margin: 16px 0; }
+
+/* Breadcrumb điều hướng là một chuỗi liên kết nhỏ ở đầu bài viết, 
+giúp người đọc biết họ đang ở đâu trong cấu trúc trang web (ví dụ: Trang chủ > Thể Thao > Bóng Đá > Ronaldo). */
+.article-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--fs-13);
+  color: var(--color-text-light);
+  margin-bottom: 16px;
+}
+
+/* Các liên kết trong breadcrumb */
+.article-breadcrumb a { color: var(--color-text-light); }
+.article-breadcrumb a:hover { color: var(--color-primary); }
+.article-breadcrumb span { color: #bbb; }
+
+/* ── Category page header ────────────────── */
+.page-category-bar {
+  background: var(--color-bg-page);
+  padding: 20px 0 0;
+  border-bottom: 2px solid var(--color-border);
+  margin-bottom: 28px;
+}
+
+.page-category-bar .container {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.page-cat-title {
+  font-size: var(--fs-28);
+  font-weight: var(--fw-800);
+  color: var(--color-text);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+
+.page-cat-tabs {
+  display: flex;
+  align-items: center;
+}
+
+/* Tab lọc (TV Show / Sự Kiện) */
+
+.page-cat-tab {
+  padding: 10px 20px;
+  font-size: var(--fs-14);
+  font-weight: var(--fw-700);
+  color: var(--color-text-light);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.page-cat-tab.active,
+.page-cat-tab:hover { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+
+/* ── Cat Hero Banner ─────────────────────── */
+/* Banner lớn ở đầu trang category, thường là ảnh đại diện của danh mục đó (ví dụ: ảnh thể thao cho trang category Thể Thao) */
+.cat-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 28px;
+  min-height: 150px;
+}
+
+.cat-hero__img { width: 100%; height: 100%; min-height: 200px; background: #ccc; overflow: hidden; }
+.cat-hero__img img { width: 100%; height: 100%; object-fit: cover; }
+
+
+.cat-hero__content {
+  background: var(--color-primary);
+  padding: 28px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.cat-hero__title {
+  font-size: var(--fs-24);
+  font-weight: var(--fw-800);
+  color: white;
+  line-height: 1.4;
+
+}
+.cat-hero__title:hover{
+  color: var(--color-primary-dark); 
+}
+
+/* ── Sidebar ─────────────────────────────── */
+.sidebar-title {
+  font-size: var(--fs-20);
+  font-weight: var(--fw-800);
+  color: var(--color-text);
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--color-border);
+  text-align: right;
+}
+
+.sidebar-ads {
+  background: var(--color-ads-bg);
+  border-radius: var(--radius-md);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-32);
+  font-weight: var(--fw-800);
+  color: white;
+  overflow: hidden;
+}
+
+/* Ảnh quảng cáo trong sidebar */
+.sidebar-ads img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Dots điều hướng */
+.dots-nav {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 0;
+}
+
+/* Dot điều hướng */
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: background var(--transition);
+}
+
+.dot.active { background: var(--color-primary); }
+
+/* ================================================
+   RESPONSIVE
+================================================ */
+
+@media (max-width: 1024px) {
+  .homepage-cats        { grid-template-columns: 1fr; }
+  .homepage-cat-box     { padding: 16px; }
+  .newsletter-section   { grid-template-columns: 1fr 1fr; }
+  .cat-hero             { grid-template-columns: 1fr; }
+  .giaitri-grid         { grid-template-columns: 220px 1fr; }
+  .page-category-bar .container { gap: 16px; flex-wrap: wrap; }
+}
+
+@media (max-width: 768px) {
+  /* Section header */
+  .home-section__name   { font-size: var(--fs-16); }
+
+  /* Giải trí: 1 cột */
+  .giaitri-grid         { grid-template-columns: 1fr; }
+  .giaitri-right-grid   { grid-template-columns: 1fr 1fr; }
+
+  /* Category bar */
+  .page-category-bar    { padding: 14px 0 0; margin-bottom: 20px; }
+  .page-cat-title       { font-size: var(--fs-20); white-space: normal; }
+  .page-cat-tabs        { flex-wrap: wrap; gap: 4px; padding-bottom: 4px; overflow-x: auto; padding-bottom: 2px; }
+  .page-cat-tab         { padding: 7px 14px; font-size: var(--fs-13); }
+
+  /* Cat Hero: stack dọc */
+  .cat-hero             { grid-template-columns: 1fr; }
+  .cat-hero__img        { min-height: 200px; max-height: 260px; }
+  .cat-hero__content    { padding: 16px 18px; }
+  .cat-hero__title      { font-size: var(--fs-16); }
+
+  /* Category explore */
+  .cat-explore__grid    { flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .cat-explore__item    { padding: 10px 16px; flex: 0 0 33%; }
+
+  /* Homepage boxes */
+  .homepage-cats        { grid-template-columns: 1fr; gap: 16px; }
+  .homepage-cat-box     { padding: 16px; }
+  .homepage-cat-box__grid { grid-template-columns: 1fr 1fr; }
+
+  /* Newsletter */
+  .newsletter-section   { grid-template-columns: 1fr; }
+  .newsletter-section__right { min-height: 80px; }
+  .newsletter-section__input { font-size: 12px; }
+  .newsletter-section__left  { padding: 16px; min-height: 200px; }
+  .newsletter-section__title { font-size: var(--fs-16); }
+
+  /* Sidebar ads */
+  .sidebar-ads          { min-height: 200px; font-size: var(--fs-22); }
+}
+
+@media (max-width: 480px) {
+  /* Section header */
+  .home-section__header { flex-wrap: wrap; gap: 4px; }
+  .home-section__name   { font-size: var(--fs-15); padding-right: 12px; }
+  .home-tab             { padding: 6px 12px 8px; font-size: 12px; }
+
+  /* Category bar */
+  .page-cat-title       { font-size: var(--fs-18); }
+  .page-cat-tab         { padding: 6px 12px; font-size: 12px; }
+
+  /* Cat Hero */
+  .cat-hero__img        { min-height: 160px; max-height: 200px; }
+  .cat-hero__content    { padding: 14px 16px; }
+  .cat-hero__title      { font-size: var(--fs-14); }
+
+  /* Category explore */
+  .cat-explore__item    { flex: 0 0 50%; padding: 10px 12px; }
+  .cat-explore__icon    { width: 40px; height: 40px; }
+  .cat-explore__label   { font-size: 12px; }
+
+  /* Homepage boxes */
+  .homepage-cat-box         { padding: 14px; }
+  .homepage-cat-box__grid   { grid-template-columns: 1fr; }
+  .homepage-cat-box__header { font-size: var(--fs-18); margin-bottom: 12px; }
+  .giaitri-right-grid       { grid-template-columns: 1fr; }
+
+  /* Newsletter */
+  .newsletter-section__input {
+    min-width: 0;
+    padding: 0 8px;
+    font-size: 11px;
+  }
+  .newsletter-section__btn {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+  .newsletter-section__title { font-size: var(--fs-18); }
+  .newsletter-section__left  { padding: 22px 20px; }
+  .newsletter-section__right { min-height: 100px; }
+
+  /* Article */
+  .article-title        { font-size: var(--fs-22); }
+
+  /* Sidebar ads */
+  .sidebar-ads          { min-height: 150px; font-size: var(--fs-18); }
+}
